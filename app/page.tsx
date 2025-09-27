@@ -16,7 +16,7 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-medium">My Portfolio</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I am a data engineer, building automated systems to process data ta scale.
+          I am a data engineer, building automated systems to process data at scale.
         </p>
         <p>
           Please check out my 
