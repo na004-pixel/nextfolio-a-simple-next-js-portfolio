@@ -3,7 +3,8 @@ import { socialLinks } from "./lib/config";
 
 export default function Page() {
   return (
-    <section>
+    <>
+      <section>
         <Image
           src="/profile.png"
           alt="Profile photo"
@@ -23,5 +24,6 @@ export default function Page() {
         </p>
       </div>
     </section>
+        </>
   );
 }
