@@ -18,4 +18,10 @@ export const projects: Project[] = [
     description: "Predict compound interest with high accuracy and speed",
     url: "/blog/CI-model",
   },
+  {
+    title: "Automated Backup to S3",
+    year: 2025,
+    description: "Powerful durable cost-effective hassle-free backups",
+    url: "/blog/s3-backup",
+  },
 ];
