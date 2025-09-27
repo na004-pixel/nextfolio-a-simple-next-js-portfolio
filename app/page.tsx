@@ -4,7 +4,6 @@ import { socialLinks } from "./lib/config";
 export default function Page() {
   return (
     <section>
-      <a href={socialLinks.twitter} target="_blank">
         <Image
           src="/profile.png"
           alt="Profile photo"
@@ -14,7 +13,6 @@ export default function Page() {
           height={160}
           priority
         />
-      </a>
       <h1 className="mb-8 text-2xl font-medium">My Portfolio</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
