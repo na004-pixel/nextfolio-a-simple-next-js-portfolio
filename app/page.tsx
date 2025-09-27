@@ -13,7 +13,7 @@ export default function Page() {
           height={160}
           priority
         />
-      <h1 className="mb-8 text-2xl font-medium">My Portfolio</h1>
+      <h1 className="mb-8 text-2xl font-medium">Noor Ansari</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I am a data engineer, building automated systems to process data at scale.
