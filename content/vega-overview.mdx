@@ -1,0 +1,71 @@
+---
+title: "Vega AI | Overview"
+publishedAt: "2025-06-10"
+summary: "AI Platform to process huge volumes of information"
+tags: "AI"
+---
+
+# AI Document Processing Platform
+
+This AI-driven platform synthesizes raw information into actionable intelligence—in any form, through any means, at any scale. The core application is built in Python, orchestrating advanced AI models from **Google (Gemini)**, **Anthropic (Claude)**, and **Fireworks AI**. It provides a robust, end-to-end pipeline to read, process, and deliver actionable data, designed for organizations seeking to operationalize artificial intelligence with maximum efficiency and flexibility.
+
+## Tech Stack
+
+* **Languages & Core Libraries:** Python, Bash  
+* **AI & Machine Learning:** Google Gemini API, Fireworks AI SDK, AWS Bedrock (Boto3), Pydantic  
+* **Concurrency:** `multiprocessing` (`ProcessPoolExecutor`, `Manager.Queue`)  
+* **Cloud & DevOps:** AWS (S3, CloudFront), Linux (`inotifywait)`
+
+
+
+## Key Features
+
+### Modular & Extensible Core
+
+The platform is engineered around a modular architecture with a deliberate separation of concerns. This design ensures the system remains highly maintainable, scalable, and extensible. It future-proofs the platform by allowing new AI providers, processing logic, or output formats to be integrated with minimal effort, protecting the investment as technical requirements evolve.
+
+* **Provider-Agnostic Architecture:** Provider-specific logic is isolated into dedicated modules, allowing the core application to remain agnostic and preventing vendor lock-in.  
+* **Extensible by Design:** New AI providers or processing modes can be integrated with minimal refactoring, thanks to the decoupled component structure.  
+* **Best-of-Breed Model Usage:** The architecture facilitates using the optimal model for each task within a single workflow, such as leveraging Gemini for OCR and Claude for nuanced textual analysis.
+
+### Flexible High-Performance Processing
+
+To accommodate diverse operational requirements, the platform provides multiple distinct processing modes, empowering users to select the optimal strategy for their specific balance of speed, cost, and contextual depth. This flexibility ensures that every workload is handled in the most efficient manner possible.
+
+* **Parallel Contextual Analysis:** Processes multiple directories concurrently, where each directory represents a self-contained information silo. This powerful hybrid model establishes the flexibility of the platform and its ability to adapt to arbitrary and emerging workflows.  
+* **Massively Parallel Processing:** Utilizes Python's `multiprocessing` to distribute document processing tasks across all available CPU cores, dramatically improving throughput and reducing turnaround time for large datasets.  
+* **Asynchronous Batch Inference:** End-to-end pipeline to orchestrates batch inference in AWS Bedrock, from programmatically generating `.jsonl` input files to submitting, monitoring and retrieving content. This enables fully asynchronous, cost-effective execution at scale.  
+* **Serial Contextual Analysis:** Provide a unified, coherent context when related information is spread across multiple files. This is essential for tasks that require holistic, coherent understanding of information and cannot be processed independently.
+
+
+
+### Dynamic & Schema-Driven Outputs
+
+A defining innovation of the platform is its dynamic, schema-driven output system, which moves beyond simple text generation to produce validated, structured intelligence. This capability decouples the AI core from the constraints of downstream applications, allowing the system to adapt to new data requirements instantly without requiring changes to the core application.
+
+* **Dynamic Schema Selection:** A `@register_schema` decorator populates a central `SCHEMA_REGISTRY`. The active schema for any run is resolved at runtime via an environment variable, with a graceful fallback to a default.  
+* **Guaranteed Data Integrity:** All structured output is strictly validated against the selected Pydantic model before being written, ensuring 100% reliability for any consuming service.  
+* **Independent Schema Repository:** This design isolates all schemas from the core platform. This allows the platform to effortlessly serve arbitrary and evolving applications, with **zero modifications** to the core platform.
+
+### End-to-End Content Automation
+
+The platform enables fully autonomous data lifecycles, from initial ingestion to final content delivery. It features a secure serialization/deserialization (SerDes) module that can serialize an entire directory structure into a manifest and securely reconstruct it on another system, along with built-in safeguards for data integrity and security.
+
+* **Autonomous Serialization:** A dedicated module that generates a single, portable manifest for directories and files, along with their content and structure.  
+* **Secure Deserialization:** A dedicated module that consumes the manifest. It features robust security that validates resolved paths to actively prevent path traversal attacks (`../`).  
+* **Atomic Backups:** Both modules ensure data integrity by first moving any existing files to a centralized `backup` directory before writing new content, preventing accidental data loss during overwrites.
+
+
+
+## Featured Workflow: An Autonomous Content Pipeline
+
+A fully autonomous content pipeline demonstrates the platform's orchestration capabilities. An `inotifywait`\-driven trigger on the file system initiates a complex AI chain reaction:
+
+1. **Ingestion:** New screenshots appear in a designated folder.  
+2. **OCR:** **Google Gemini** is triggered to perform high-accuracy OCR on the images.  
+3. **Analysis:** The creation of the OCR text file triggers **Fireworks AI** to perform analysis and structuring.  
+4. **Deployment:** The final structured content is automatically uploaded to an **AWS S3** bucket.  
+5. **Cache Invalidation:** A final script is called to invalidate the **AWS CloudFront** CDN cache.
+
+Thus processed content is delivered with zero manual intervention.
+
