@@ -1,0 +1,52 @@
+---
+title: "Linear Model to Predict Compound Interest | Overview"
+publishedAt: "2025-06-10"
+summary: "AI Platform to process huge volumes of information"
+tags: "Data science"
+---
+
+
+
+
+# Linear Model to Predict Compound Interest
+
+This project creates a mathematical model, designed for **rapid, manual approximation of compound interest**. The model is validated for interest rates between 3% and 15% over time periods of 1 to 10 years.
+
+The core objective is to replace the mentally taxing exponential formula with a simple, piecewise quadratic equation, providing a powerful tool for back-of-the-envelope financial estimates where a calculator is unavailable. The model achieves a very high accuracy with **average absolute error of just 0.74%** across its target operational range.
+
+**Tech Stack:**
+
+*   **Languages & Core Libraries:** Python
+*   **Data Analysis & Scientific Computing:** NumPy, Pandas
+*   **Data Visualization:** Matplotlib
+
+---
+
+## Key Features
+
+### Innovative Piecewise Quadratic Model
+
+At the heart of the model is an approximation algorithm engineered specifically for easy human calculation. The model replaces the complex, iterative exponentiation with simple arithmetic (multiplication and squaring), making it feasible for quick, unaided human calculation.
+
+It models compound interest using a piecewise quadratic function, striking an optimal balance between mental tractability and predictive accuracy. The model intelligently adapts its quadratic coefficient based on the product of the interest rate and time, making it more accurate across a wide range of inputs than a single, static formula.
+
+### Multi-Dimensional Error Visualization
+
+A key feature is a comprehensive dashboard of four distinct visualizations that provide deep, actionable insights into the model's performance, strengths, and limitations. This suite moves beyond simple accuracy scores to tell a complete story of the model's behavior.
+
+*   **Temporal Error Analysis:** A line plot tracks absolute error over time for various interest rates, revealing how well the model over time.
+*   **Statistical Error Distribution:** A histogram shows the frequency and magnitude of errors, providing a summary of the model's overall accuracy
+*   **Parameter Space Heatmap:** A heatmap visually highlights the "danger zones"—the specific combinations of interest rate and time where the model's error is highest.
+*   **Core Driver Identification:** A scatter plot of error versus the `R × T` product directly confirms the primary factor influencing model accuracy.
+
+
+### Rigorous Validation
+
+The platform features validation to evaluate the model's performance across its defined parameter space.
+
+*   **Systematic Grid Testing:** The framework iterates through a comprehensive matrix of interest rates (3% to 15%) and time periods (1 to 10 years), ensuring every combination is tested.
+*   **Data-Driven Analysis:** All test results are compiled into a structured Pandas DataFrame, enabling sophisticated downstream analysis. The key results across 60 test cases include:
+    *   **Average Absolute Error: 0.74%**
+    *   **Maximum Absolute Error: 3.15%**
+    *   **Minimum Absolute Error: 0.01%**
+*   **Scalable by Design:** The framework can be effortlessly scaled to test wider ranges of rates, finer time increments, or entirely new model variations with minimal code changes.
