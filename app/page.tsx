@@ -19,8 +19,7 @@ export default function Page() {
           I am a data engineer, building automated systems to process data at scale.
         </p>
         <p>
-          Please check out my 
-          <a href="/projects/">Projects.</a>
+          Please check out my <a href="/projects/">Projects.</a>
         </p>
       </div>
     </section>
