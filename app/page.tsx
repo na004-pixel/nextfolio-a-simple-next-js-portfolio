@@ -21,19 +21,8 @@ export default function Page() {
           I am a data engineer, building automated systems to process data ta scale.
         </p>
         <p>
-          Nextfolio has everything you need for a portfolio: MDX blog, SEO, RSS,
-          Atom & JSON feeds, analytics, Tweet & YouTube embeds, KaTeX and {""}
-          <a
-            target="_blank"
-            href="https://github.com/1msirius/Nextfolio?tab=readme-ov-file#features"
-          >
-            more
-          </a>
-          .
-        </p>
-        <p>
           Please check out my projects at 
-          <a href="/projects/">Projects</a> post.
+          <a href="/projects/"> Projects.</a>
         </p>
       </div>
     </section>
