@@ -15,11 +15,10 @@ export default function Page() {
           priority
         />
       </a>
-      <h1 className="mb-8 text-2xl font-medium">Portfolio template!</h1>
+      <h1 className="mb-8 text-2xl font-medium">My Portfolio</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          A clean, fast, and lightweight portfolio template built with Next.js,
-          Vercel, and Tailwind CSS.
+          I am a data engineer, building automated systems to process data ta scale.
         </p>
         <p>
           Nextfolio has everything you need for a portfolio: MDX blog, SEO, RSS,
@@ -33,29 +32,8 @@ export default function Page() {
           .
         </p>
         <p>
-          Nextfolio is{" "}
-          <a href={socialLinks.github} target="_blank">
-            open-source
-          </a>{" "}
-          and fully customizable, making it easy to add more features.
-        </p>
-        <p>
-          <a
-            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1msirius%2FNextfolio"
-            target="_blank"
-          >
-            Deploy
-          </a>{" "}
-          your Nextfolio site with Vercel in minutes and follow the set up
-          instructions in the{" "}
-          <a href="/blog/getting-started">Getting Started</a> post.
-        </p>
-        <p>
-          Built and maintained by{" "}
-          <a href="https://imsirius.xyz/" target="_blank">
-            Sirius
-          </a>
-          .
+          Please check out my projects at 
+          <a href="/projects/">Projects</a> post.
         </p>
       </div>
     </section>
