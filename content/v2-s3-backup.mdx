@@ -7,10 +7,12 @@ tags: "S3, AWS"
 
 
 # Automated S3 Backup System
-Git-Aware Cloud Backup Solution
+Durable, Git-Aware Cloud Backup Solution
 
-Created a robust backup pipeline that intelligently snapshots directories to AWS S3. The system respects .gitignore rules, uses rsync for efficiency, and provides comprehensive logging with safety checks.
+Created a robust backup pipeline that intelligently snapshots directories to AWS S3. The system respects .gitignore rules, implements incremental backups efficiency, and uses various storage classes in S3 to optimize costs
+
+
 
 - Tech Stack: Bash, AWS S3, Git, rsync
-- Key Results: Automated disaster recovery with versioned snapshots
-- Features: Incremental backups, parallel uploads, audit trails
+- Key Results: Fast, durable, cost-effective backups
+- Features: Incremental backups, parallel uploads, audit trails, smart git integration
