@@ -7,6 +7,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Data Integrity Sentinel",
+    year: 2025,
+    description: "High-performance system to verify data integrity",
+    url: "/blog/v2-data-integrity-sentinel",
+  },
+  {
+    title: "Resumatic",
+    year: 2025,
+    description: "Nextjs app to create aesthetic, sophisticated, pixel-perfect resumes, every single time",
+    url: "/blog/v2-resumatic",
+  },
+  {
     title: "Vega AI",
     year: 2025,
     description: "AI powered Automation Platform",
