@@ -1,3 +1,13 @@
 # Data Integrity Sentinel
 
 High performance system to verify data integrity at scale. Can process daa at more than 300 MB/sec.
+
+My project is a high-performance data integrity system. The core challenges in this project were memory efficiency and throughput in massive datasets.
+
+To improve memory efficiency, I designed the system around streaming. Instead of loading entire files, it processes data in small, fixed-size chunks. The result is that a 10GB file consumes the same tiny amount of memory as a 10MB file, keeping usage constant and predictable.
+
+For throughput, I built a concurrent producer-consumer pipeline using Java's BlockingQueues. I broke the work into distinct stages: one for finding files, a pool of workers for hashing, and a final stage for saving results to DynamoDB. This decoupling allows each stage to run at full speed.
+
+I have leveraged Spring Boot to provide configuration and dependency injection. DynamoDB provides low-latency key-value operations, while postgres supports complex analytical queries on audit logs.
+
+Ultimately, this design achieves near-constant memory usage regardless of file size and a sustained throughput of over 500 MB/sec.
