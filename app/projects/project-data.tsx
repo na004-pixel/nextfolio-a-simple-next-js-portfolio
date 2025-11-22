@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     title: "Resumatic",
     year: 2025,
-    description: "Nextjs app to create aesthetic, sophisticated, pixel-perfect resumes, every single time",
+    description: "Create high-quality, pixel-perfect resumes, every single time, even across content updates",
     url: "/blog/v2-resumatic",
   },
   {
