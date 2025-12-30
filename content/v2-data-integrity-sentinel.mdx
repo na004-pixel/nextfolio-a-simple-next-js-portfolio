@@ -9,12 +9,21 @@ tags: "Data Pipelines, Concurrency, High-performance Systems"
 
 # Data Integrity Sentinel
 
+Key tech stack:
+- Java 21 (`Stream`, `Concurrent`, `Security`)
+- Spring Boot
+- Postgres, DynamoDB
+- Docker, Localstack
+
+
+
 This project is a high-performance data integrity system. Key requirements of this projects are:
 
 - High throughput
 - Memory efficiency
 - Ability to work with large volumes of files and large file sizes
 - Robust
+
 
 
 To improve memory efficiency, I designed the system around streaming. Instead of loading entire files, it processes data in small, fixed-size chunks. The result is that a 10GB file consumes the same tiny amount of memory as a 10MB file, keeping usage constant and predictable.
