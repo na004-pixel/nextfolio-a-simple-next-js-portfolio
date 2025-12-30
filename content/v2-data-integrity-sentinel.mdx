@@ -1,7 +1,7 @@
 ---
 title: "Data Integrity Sentinel | Overview"
 publishedAt: "2025-10-20"
-summary: "High performance system to verify data integrity at scale. Can process daa at more than 300 MB/sec."
+summary: "High performance system to verify data integrity at scale. Can process daa at more than 500 MB/sec."
 tags: "Data Pipelines, Concurrency, High-performance Systems"
 ---
 
@@ -9,14 +9,20 @@ tags: "Data Pipelines, Concurrency, High-performance Systems"
 
 # Data Integrity Sentinel
 
-High performance system to verify data integrity at scale. Can process daa at more than 300 MB/sec.
+This project is a high-performance data integrity system. Key requirements of this projects are:
 
-My project is a high-performance data integrity system. The core challenges in this project were memory efficiency and throughput in massive datasets.
+- High throughput
+- Memory efficiency
+- Ability to work with large volumes of files and large file sizes
+- Robust
+
 
 To improve memory efficiency, I designed the system around streaming. Instead of loading entire files, it processes data in small, fixed-size chunks. The result is that a 10GB file consumes the same tiny amount of memory as a 10MB file, keeping usage constant and predictable.
 
-For throughput, I built a concurrent producer-consumer pipeline using Java's BlockingQueues. I broke the work into distinct stages: one for finding files, a pool of workers for hashing, and a final stage for saving results to DynamoDB. This decoupling allows each stage to run at full speed.
+For throughput, I have leveraged producer-consumer architecture. The system is built from several concurrent stages. Further, I have also applied multi-threading. This architecture creates a powerful combination that maximizes throughput
 
-I have leveraged Spring Boot to provide configuration and dependency injection. DynamoDB provides low-latency key-value operations, while postgres supports complex analytical queries on audit logs.
+I have used DynamoDB and Postgres databases. DynamoDB is used for storing state, while Postgres stores historical logs. DynamoDB provides low-latency key-value operations crucial for high-throughput processing. Postgres supports complex analytical queries on audit logs.
+
+I have leveraged Spring Boot to provide configuration and dependency injection. 
 
 Ultimately, this design achieves near-constant memory usage regardless of file size and a sustained throughput of over 500 MB/sec.
